@@ -37,18 +37,21 @@
             bindings = <&kp L &kp E &kp C &kp H &kp U &kp C &kp K &kp T &kp H &kp E &kp P &kp I &kp R &kp A &kp T &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "EMAIL1";
         };
+
         email2: email2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp J &kp O &kp A &kp N &kp DOT &kp V &kp I &kp L &kp A &kp R &kp I &kp N &kp O &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "EMAIL2";
         };
+
         lambda_sign: lambda_sign {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp GT>;
             label = "LAMBDA_SIGN";
         };
+
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -63,6 +66,15 @@
             label = "ENYE_TAPDANCE";
             #binding-cells = <0>;
             bindings = <&kp SEMICOLON>, <&enye>;
+        };
+
+        capslock_tapdance: capslock_tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPSLOCK_TAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp CAPSLOCK>;
+
+            tapping-term-ms = <100>;
         };
     };
 
@@ -81,7 +93,7 @@
         default_layer {
             bindings = <
 &kp TAB             &kp Q  &kp W  &kp E         &kp R  &kp T      &kp Y      &kp U  &kp I         &kp O    &kp P           &kp BACKSPACE
-&mt LCTRL CAPSLOCK  &kp A  &kp S  &kp D         &kp F  &kp G      &kp H      &kp J  &kp K         &kp L    &enye_tapdance  &kp SINGLE_QUOTE
+&capslock_tapdance  &kp A  &kp S  &kp D         &kp F  &kp G      &kp H      &kp J  &kp K         &kp L    &enye_tapdance  &kp SINGLE_QUOTE
 &kp LSHIFT          &kp Z  &kp X  &kp C         &kp V  &kp B      &kp N      &kp M  &kp COMMA     &kp DOT  &kp FSLH        &mt LSHIFT KP_ENTER
                                   &kp LEFT_ALT  &mo 1  &kp SPACE  &kp SPACE  &mo 2  &kp LEFT_WIN
             >;
