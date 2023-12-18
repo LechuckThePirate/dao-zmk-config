@@ -74,7 +74,7 @@
             #binding-cells = <0>;
             bindings = <&kp LCTRL>, <&kp CAPSLOCK>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <150>;
         };
     };
 
